@@ -1,0 +1,12 @@
+version: "3"
+services:
+  calculator:
+    build: ./calculator
+    ports:
+      - "9001:9000"
+  greet:
+    build: ./greet
+    depends_on:
+      - calculator
+    ports:
+      - "9002:9000"
